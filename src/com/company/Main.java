@@ -16,11 +16,16 @@ public class Main {
             String longestWord = "";
             int harryCounter = 0;
             int linesCounter = 0;
-            HashSet<Integer> hashCodes = new HashSet<>();
+            LinkedHashSet<Integer> hashCodes = new LinkedHashSet<>();
 
 
             while(scanner.hasNextLine()) {
                 String line = scanner.nextLine();
+
+                if (line.length() == 0) {
+                    continue;
+                }
+
                 hashCodes.add(line.hashCode());
                 String[] words = line.split("\\W+");
 
